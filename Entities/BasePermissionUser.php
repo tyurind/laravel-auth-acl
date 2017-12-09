@@ -12,6 +12,7 @@ use Modules\Auth\Traits\AclGuardTrait;
  * @property int $user_id
  * @property string $user_type
  * @property int|null $team_id
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermissionUser wherePermissionId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermissionUser whereTeamId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermissionUser whereUserId($value)

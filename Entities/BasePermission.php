@@ -15,9 +15,29 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Auth\Traits\AclPermissionTrait;
 
 /**
- * Class LaratrustPermission
- * @author     Dmitriy Tyurin <fobia3d@gmail.com>
- * @copyright  Copyright (c) 2016 Dmitriy Tyurin
+ * Class BasePermission
+ *
+ * @property int $id
+ * @property string $guard
+ * @property string $name
+ * @property string|null $display_name
+ * @property string|null $description
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Auth\Entities\BaseRole[] $roles
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermission whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermission whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermission whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermission whereDisplayName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermission whereGuard($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermission whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermission whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermission whereUpdatedAt($value)
+ *
+ * @mixin \Eloquent
  */
 class BasePermission extends LaratrustPermission
 {

@@ -11,12 +11,13 @@ use Modules\Auth\Traits\AclGuardTrait;
  *
  * @property int $permission_id
  * @property int $role_id
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermissionRole wherePermissionId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Auth\Entities\BasePermissionRole whereRoleId($value)
  *
  * @mixin \Eloquent
  */
-class BasePermissionRole extends Pivot
+class BasePermissionRole extends Model
 {
     use AclGuardTrait;
 

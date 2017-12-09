@@ -21,7 +21,7 @@ use Modules\Auth\Traits\AclGuardTrait;
  *
  * @mixin \Eloquent
  */
-class BaseRoleUser extends Pivot
+class BaseRoleUser extends Model
 {
     use AclGuardTrait;
 
