@@ -1,0 +1,26 @@
+{
+    "name": "fobia/laravel-auth-acl",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=7.0.0",
+        "santigarcor/laratrust": "^5.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Auth\\Providers\\AuthServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Auth\\": ""
+        }
+    }
+}
