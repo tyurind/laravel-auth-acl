@@ -26,11 +26,7 @@ trait AclGuardTrait
             $defaultKey = $key;
             $key = str_replace('laratrust.', 'laratrust_guard.providers.' . $prefix . '.', $key);
         }
-        dump(['key', $key, $defaultKey, $prefix]);
         return Config::get($key, $defaultKey ?  Config::get($defaultKey, $default) : $default);
-
-        // return Config::get('laratrust.models.permission');
-        // return isset($this->authGuard) ? $this->authGuard : '';
     }
 
     public function getCacheKeyId()

@@ -22,7 +22,6 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerConfig();
-        $this->registerViews();
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
     }
 
@@ -45,31 +44,11 @@ class AuthServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('laratrust_guard.php'),
+            __DIR__.'/../Config/laratrust_guard.php' => config_path('laratrust_guard.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'laratrust_guard'
+            __DIR__.'/../Config/laratrust_guard.php', 'laratrust_guard'
         );
-    }
-
-    /**
-     * Register views.
-     *
-     * @return void
-     */
-    public function registerViews()
-    {
-        $viewPath = resource_path('views/modules/auth');
-
-        $sourcePath = __DIR__.'/../Resources/views';
-
-        $this->publishes([
-            $sourcePath => $viewPath
-        ],'views');
-
-        $this->loadViewsFrom(array_merge(array_map(function ($path) {
-            return $path . '/modules/auth';
-        }, \Config::get('view.paths')), [$sourcePath]), 'auth');
     }
 
     /**
