@@ -46,6 +46,13 @@ class AuthServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../Config/laratrust_guard.php' => config_path('laratrust_guard.php'),
         ], 'config');
+        $this->publishes([
+            __DIR__.'/../Config/laratrust.php' => config_path('laratrust.php'),
+        ], 'config');
+
+        $this->mergeConfigFrom(
+            __DIR__.'/../Config/laratrust.php', 'laratrust'
+        );
         $this->mergeConfigFrom(
             __DIR__.'/../Config/laratrust_guard.php', 'laratrust_guard'
         );
